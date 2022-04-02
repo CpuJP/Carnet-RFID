@@ -5,6 +5,23 @@ create table if not exists rfid_nfc (
 id_carnet varchar(50) not null primary key
 );
 
+create table if not exists personal_universidad (
+id_persona varchar(15) not null primary key,
+tipo_id ENUM('Cedula Ciudadania', 'Tarjeta Identidad', 'Pasaporte', 'PEP', 'Visa'),
+rfid_nfc_id_carnet varchar(50) not null,
+foreign key (rfid_nfc_id_carnet) references rfid_nfc(id_carnet),
+codigo varchar(15) not null,
+unique key unique_codigo (codigo),
+primer_nombre varchar(15) not null,
+segundo_nombre varchar(15),
+primer_apellido varchar(15) not null,
+segundo_apellido varchar(15),
+email varchar(100) not null,
+unique key unique_email (email),
+celular varchar(13) not null,
+unique key unique_celular (celular)
+);
+
 create table if not exists autodiag (
 id_autodiag int auto_increment primary key,
 fiebre bit not null,
@@ -25,31 +42,16 @@ ingresar_elementos bit not null,
 bicicleta bit,
 carro bit,
 moto bit,
-portatil bit
-);
-
-create table if not exists personal_universidad (
-id_persona varchar(15) not null primary key,
-tipo_id ENUM('Cedula Ciudadania', 'Tarjeta Identidad', 'Pasaporte', 'PEP', 'Visa'),
-rfid_nfc_id_carnet varchar(50) not null,
-foreign key (rfid_nfc_id_carnet) references rfid_nfc(id_carnet),
-codigo varchar(15) not null,
-unique key unique_codigo (codigo),
-primer_nombre varchar(15) not null,
-segundo_nombre varchar(15),
-primer_apellido varchar(15) not null,
-segundo_apellido varchar(15),
-email varchar(100) not null,
-unique key unique_email (email),
-celular varchar(13) not null,
-unique key unique_celular (celular),
-id_autodiag int not null,
-foreign key (id_autodiag) references autodiag(id_autodiag)
+portatil bit,
+id_persona varchar(15) not null,
+foreign key (id_persona) references personal_universidad(id_persona),
+id_rfid_nfc varchar(50) not null,
+foreign key (id_rfid_nfc) references rfid_nfc(id_carnet)
 );
 
 create table if not exists estudiante (
 facultad ENUM('Ingeniería', 'Ciencias Administrativas', 'Ciencias Agropecuarias', 'Ciencias del Deporte', 'Educación', 'Ciencias de la Salud', 'Ciencias Sociales') not null,
-carrera ENUM('Admin Empresas', 'Contaduría Pública', 'Gesstión Turística', 'Agrónoma', 'Ambiental', 'Zootecnia', 'Educación Física', 'Ciencias Sociales', 'Electrónica', 'Industrial', 'Sistemas y Computación', 'Sistemas', 'Software', 'Enfermería', 'Música', 'Psicología') not null,
+carrera ENUM('Admin Empresas', 'Contaduría Pública', 'Gestión Turística', 'Agrónoma', 'Ambiental', 'Zootecnia', 'Educación Física', 'Ciencias Sociales', 'Electrónica', 'Industrial', 'Sistemas y Computación', 'Sistemas', 'Software', 'Enfermería', 'Música', 'Psicología') not null,
 sede ENUM('Fusagasugá', 'Facatativá', 'Girardot', 'Soacha', 'Ubaté', 'Zipaquirá', 'Chía', 'Bogotá') not null,
 semestre int not null,
 id_persona_estudiante varchar(15) not null,
