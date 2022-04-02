@@ -93,7 +93,7 @@ foreign key (id_rfid_nfc_egresado) references rfid_nfc(id_carnet)
 create table if not exists prestamos (
 id_prestamo int auto_increment primary key,
 nombre_objeto varchar(50) not null,
-incio_prestamo datetime	not null,
+inicio_prestamo datetime not null,
 final_prestamo datetime not null,
 origen ENUM('Bienestar', 'Biblioteca', 'Sala de Computo') not null,
 id_persona varchar(15) not null,
@@ -103,8 +103,8 @@ foreign key (id_rfid_nfc) references rfid_nfc(id_carnet)
 );
 
 create table if not exists laboratorio (
-ingreso datetime not null,
-salida datetime not null,
+ingreso datetime,
+salida datetime,
 id_persona varchar(15) not null,
 foreign key (id_persona) references personal_universidad(id_persona),
 id_rfid_nfc varchar(50) not null,
@@ -112,8 +112,8 @@ foreign key (id_rfid_nfc) references rfid_nfc(id_carnet)
 );
 
 create table if not exists sala_computo (
-ingreso datetime not null,
-salida datetime not null,
+ingreso datetime,
+salida datetime,
 sala_ingreso varchar(5) not null,
 pc_uso varchar(50) not null,
 id_persona varchar(15) not null,
@@ -121,5 +121,3 @@ foreign key (id_persona) references personal_universidad(id_persona),
 id_rfid_nfc varchar(50) not null,
 foreign key (id_rfid_nfc) references rfid_nfc(id_carnet)
 );
-
-
