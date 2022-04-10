@@ -58,7 +58,7 @@ id_persona_estudiante varchar(15) not null,
 unique key unique_id_persona_estudiante(id_persona_estudiante),
 foreign key (id_persona_estudiante) references personal_universidad(id_persona),
 id_rfid_nfc_estudiante varchar(50) not null,
-unique key unique_id_rfid_nfc_estudiante(id_rfic_nfc_estudiante),
+unique key unique_id_rfid_nfc_estudiante(id_rfid_nfc_estudiante),
 foreign key (id_rfid_nfc_estudiante) references rfid_nfc(id_carnet)
 );
 
