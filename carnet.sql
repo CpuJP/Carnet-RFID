@@ -1,10 +1,10 @@
-create schema carnet;
+create schema carnet;			
 use carnet;
 
 create table if not exists rfid_nfc (
 id_carnet varchar(50) not null primary key
 );
-
+	
 create table if not exists personal_universidad (
 id_persona varchar(15) not null primary key,
 tipo_id ENUM('Cedula Ciudadania', 'Tarjeta Identidad', 'Pasaporte', 'PEP', 'Visa'),

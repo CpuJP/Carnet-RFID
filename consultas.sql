@@ -11,7 +11,7 @@ insert into carnet.sala_computo values ('2022-04-01 20:27:40', '2022-04-01 20:27
 insert into carnet.laboratorio values ('2022-04-01 20:27:40', '2022-04-01 20:27:40', '1007668974', '0987654321357908642');
 insert into carnet.autodiag (fiebre, fatiga, cabeza, tos, malestar, musculos, contacto_covid19, respiracion, pecho, nariz, garganta, olores, diarrea, temperatura, ingresar_elementos, id_persona, id_rfid_nfc) values (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36.7, 0, '1007668974', '0987654321357908642');
 
-SHOW INDEXES FROM carnet.estudiante;
+SHOW INDEXES FROM carnet.administrativo;
 
 select id_persona, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sede, facultad, sede, semestre, email, celular from carnet.personal_universidad, carnet.estudiante where personal_universidad.id_persona = estudiante.id_persona_estudiante;
 SELECT codigo, carrera, primer_apellido, semestre FROM carnet.personal_universidad JOIN estudiante ON personal_universidad.id_persona = estudiante.id_persona_estudiante;
