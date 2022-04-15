@@ -9,10 +9,12 @@ public class PersonalUniversidad {
     private String segundoNombre;
     private String primerApellido;
     private String segundoApellido;
+    private String fechaNacimiento;
+    private String genero;
     private String email;
     private String celular;
 
-    public PersonalUniversidad(String idPersona, String tipoId, String RfidNfcIdCarnet, String codigo, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String email, String celular) {
+    public PersonalUniversidad(String idPersona, String tipoId, String RfidNfcIdCarnet, String codigo, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String fechaNacimiento, String genero, String email, String celular) {
         this.idPersona = idPersona;
         this.tipoId = tipoId;
         this.RfidNfcIdCarnet = RfidNfcIdCarnet;
@@ -21,6 +23,8 @@ public class PersonalUniversidad {
         this.segundoNombre = segundoNombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
         this.email = email;
         this.celular = celular;
     }
@@ -75,6 +79,22 @@ public class PersonalUniversidad {
 
     public void setSegundoApellido(String segundoApellido) {
         this.segundoApellido = segundoApellido;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public String getEmail() {
