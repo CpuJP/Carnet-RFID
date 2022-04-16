@@ -70,6 +70,7 @@ public class EgresadoDAO {
                 String anoProm = rs.getString(12);
                 eg = new Egresado(idPersona, tipoId, codigo, primerNombre, segundoNombre, 
                         primerApellido, segundoApellido, email, celular, facultad, carrera, anoProm);
+                conn.close();
             } else {
                 eg = new Egresado(null, null, null, null, null, null, null, null, null, null, null, null);
             }

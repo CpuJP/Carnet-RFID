@@ -73,6 +73,7 @@ public class PersonalUniversidadDAO {
                 String celular = rs.getString(12);
                 pu = new PersonalUniversidad(idPersona1, tipoId, rfidNfc, codigo, primerNombre, 
                         segundoNombre, primerApellido, segundoApellido, fechaNacimineto, genero, email, celular);
+                conn.close();
             } else {
                 pu = new PersonalUniversidad(null, null, null, null, null, null, null, null, null, null, null, null);
             }
@@ -169,11 +170,14 @@ public class PersonalUniversidadDAO {
             }else{
                 System.out.println("Problemas al conectar");
             }
-            String sql = "DELETE FROM docentes WHERE id_persona_docente =?\n" +
-                            "DELETE FROM egresado WHERE id_persona_egresado=?\n" +
-                            "DELETE FROM estudiante WHERE id_persona_estudiante=?\n" +
-                            "DELETE FROM administrativo WHERE id_persona_administrativo =?\n" +
-                            "DELETE FROM laboratorio WHERE id_persona=?\n" +
+            String sql = "DELETE FROM docentes WHERE id_persona_docente =?;" +
+                            "DELETE FROM egresado WHERE id_persona_egresado=?;" +
+                            "DELETE FROM estudiante WHERE id_persona_estudiante=?;" +
+                            "DELETE FROM administrativo WHERE id_persona_administrativo =?;" +
+                            "DELETE FROM laboratorio WHERE id_persona=?;" +
+                            "delete from autodiag where id_persona=?;" +
+                            "delete from prestamos where id_persona=?;" +
+                            "delete from sala_computo where id_persona=?;" +
                             "DELETE FROM personal_Universidad WHERE id_persona=?";
             PreparedStatement statement = conn.prepareCall(sql);
             statement.setString(1, idPersona);
@@ -182,6 +186,9 @@ public class PersonalUniversidadDAO {
             statement.setString(4, idPersona);
             statement.setString(5, idPersona);
             statement.setString(6, idPersona);
+            statement.setString(7, idPersona);
+            statement.setString(8, idPersona);
+            statement.setString(9, idPersona);
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Eliminación exitosa");

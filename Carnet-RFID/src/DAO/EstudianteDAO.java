@@ -72,6 +72,7 @@ public class EstudianteDAO {
                 Integer semestre = rs.getInt(13);
                 et = new Estudiante(idPersona, tipoId, codigo, primerNombre, segundoNombre, primerApellido, 
                         segundoApellido, email, celular, facultad, carrera, sede, semestre);
+                conn.close();
             }else{
                 et = new Estudiante(null, null, null, null, null, null, null, null, null, null, null, null, null);
             }

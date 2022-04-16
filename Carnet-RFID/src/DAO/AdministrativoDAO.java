@@ -67,6 +67,7 @@ public class AdministrativoDAO {
                 String sede = rs.getString(11);
                 ad = new Administrativo(idPersona, tipoId, codigo, primerNombre, segundoNombre, primerApellido, 
                         segundoApellido, email, celular, cargo, sede);
+                conn.close();
             }else{
                 ad = new Administrativo(null, null, null, null, null, null, null, null, null, null, null);
             }

@@ -71,6 +71,7 @@ public class DocenteDAO {
                 String sede = rs.getString(13);
                 dc = new Docente(idPersona, tipoId, codigo, primerNombre, segundoNombre, primerApellido, 
                         segundoApellido, email, celular, tipo, cargo, facultad, sede);
+                conn.close();
             } else {
                 dc = new Docente(null, null, null, null, null, null, null, null, null, null, null, null, null);
             }

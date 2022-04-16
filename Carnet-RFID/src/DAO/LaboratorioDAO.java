@@ -81,6 +81,7 @@ public class LaboratorioDAO {
                 String idPersona1 = rs.getString(3);
                 String idRfidNfc = rs.getString(4);
                 lb = new Laboratorio(ingreso, salida, idPersona1, idRfidNfc);
+                conn.close();
             } else {
                 lb = new Laboratorio(null, null, null, null);
             }
