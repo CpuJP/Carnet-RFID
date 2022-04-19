@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AdministrativoDAO {
     
-    public void creacteAdministrativo(Administrativo ad){
+    public void createAdministrativo(Administrativo ad){
         String dbURL = "jdbc:mysql://localhost:3306/carnet";
         String username = "root";
         String password = "Juanpablo1870";
