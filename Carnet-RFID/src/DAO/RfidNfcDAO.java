@@ -63,7 +63,7 @@ public class RfidNfcDAO {
         return rn;
     }
     
-    public RfidNfc getIdPersonaRAndfidNfc (String idRfidNfc){
+    public RfidNfc getIdPersonaRAndfidNfcByRfidNfc (String idRfidNfc){
         String dbURL = "jdbc:mysql://localhost:3306/carnet";
         String username = "root";
         String password = "Juanpablo1870";
@@ -85,6 +85,38 @@ public class RfidNfcDAO {
                 String idPersona = rs.getString(1);
                 String idPersonaRfidNfc = rs.getString(2);
                 rn = new RfidNfc(idPersonaRfidNfc, idPersona);
+                conn.close();
+            } else {
+                rn = new RfidNfc(null, null);
+            }
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return rn;
+    }
+    
+    public RfidNfc getIdPersonaRAndfidNfcByIdPersona (String idPersona){
+        String dbURL = "jdbc:mysql://localhost:3306/carnet";
+        String username = "root";
+        String password = "Juanpablo1870";
+        RfidNfc rn = null;
+        try {
+            Connection conn = DriverManager.getConnection(dbURL, username, password);
+            if (conn != null) {
+                System.out.println("Conexión exitosa");
+            }else{
+                System.out.println("Problemas al conectar");
+            }
+            String sql = "SELECT id_persona, rfid_nfc_id_carnet FROM personal_universidad JOIN rfid_nfc ON "
+                    + "personal_universidad.id_persona = ?";
+            PreparedStatement statement = conn.prepareCall(sql);
+            statement.setString(1, idPersona);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                String idPersona1 = rs.getString(1);
+                String idPersonaRfidNfc = rs.getString(2);
+                rn = new RfidNfc(idPersonaRfidNfc, idPersona1);
                 conn.close();
             } else {
                 rn = new RfidNfc(null, null);
