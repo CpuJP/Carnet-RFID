@@ -62,3 +62,7 @@ insert into laboratorio values (null, '2022-04-18 20:42:00', '1007668974', '1234
 SELECT * FROM personal_universidad WHERE id_persona = '1007668974';
 SELECT * FROM personal_universidad;
 ALTER table personal_universidad change column fecha_nacimineto fecha_nacimiento date;
+insert into carnet.prestamos (nombre_objeto, inicio_prestamo, origen, id_persona, id_rfid_nfc) values ('Balón voleibol', '2022-04-01 20:27:40', 'Bienestar', '1007668974', '0987654321357908642');
+use carnet;
+SELECT id_persona FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = '12345';
+SELECT id_persona, rfid_nfc_id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.id_persona = '1007668974';
