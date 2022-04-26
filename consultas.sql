@@ -50,6 +50,7 @@ select * from carnet.docentes;
 SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, tipo, cargo, facultad, sede from carnet.docentes, carnet.personal_universidad where docentes.id_persona_docente = personal_universidad.id_persona and docentes.id_persona_docente = '1007668974';
 SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, tipo, cargo, facultad, sede from carnet.docentes, carnet.personal_universidad where docentes.id_persona_docente = personal_universidad.id_persona;
 SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, facultad, carrera, sede, semestre FROM estudiante, personal_universidad WHERE estudiante.id_persona_estudiante = personal_universidad.id_persona;
+use carnet;
 select * from estudiante, docentes, administrativo, egresado, personal_universidad where (personal_universidad.id_persona = estudiante.id_persona_estudiante and estudiante.id_persona_estudiante='1007668974') or (personal_universidad.id_persona = docentes.id_persona_docente and docentes.id_persona_docente='100766897') or (personal_universidad.id_persona = egresado.id_persona_egresado and egresado.id_persona_egresado='100766897') or (personal_universidad.id_persona = administrativo.id_persona_administrativo and administrativo.id_persona_administrativo='100766897');
 select count(*) from laboratorio;
 select * from docentes;

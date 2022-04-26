@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.SalaDeComputo;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SalaDeComputoDAO {
     
-    public void createSalaComputoIngreso (SalaDeComputo sc){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createSalaComputoIngreso (SalaDeComputo sc) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -35,10 +38,11 @@ public class SalaDeComputoDAO {
         }
     }
     
-    public void createSalaComputoSalida (SalaDeComputo sc){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createSalaComputoSalida (SalaDeComputo sc) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -63,10 +67,11 @@ public class SalaDeComputoDAO {
     
     
     
-    public SalaDeComputo getSalaComputoId (String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public SalaDeComputo getSalaComputoId (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         SalaDeComputo sc = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -98,10 +103,11 @@ public class SalaDeComputoDAO {
         return sc;
     }
     
-    public List<SalaDeComputo> getAllSalaComputo(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<SalaDeComputo> getAllSalaComputo() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<SalaDeComputo> SalaComputoT = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);

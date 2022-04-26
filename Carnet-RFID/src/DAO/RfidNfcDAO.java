@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.RfidNfc;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RfidNfcDAO {
     
-    public void createRfidNfc (RfidNfc rn){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createRfidNfc (RfidNfc rn) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -31,10 +34,11 @@ public class RfidNfcDAO {
         }
     }
     
-    public RfidNfc getPersonaURfidNfc (String idRfidNfc){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public RfidNfc getPersonaURfidNfc (String idRfidNfc) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         RfidNfc rn = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -63,10 +67,11 @@ public class RfidNfcDAO {
         return rn;
     }
     
-    public RfidNfc getIdPersonaRAndfidNfcByRfidNfc (String idRfidNfc){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public RfidNfc getIdPersonaRAndfidNfcByRfidNfc (String idRfidNfc) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         RfidNfc rn = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -96,10 +101,11 @@ public class RfidNfcDAO {
         return rn;
     }
     
-    public RfidNfc getIdPersonaRAndfidNfcByIdPersona (String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public RfidNfc getIdPersonaRAndfidNfcByIdPersona (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         RfidNfc rn = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -128,10 +134,11 @@ public class RfidNfcDAO {
         return rn;
     }
     
-    public List<RfidNfc> getAllIdPersonasRfidNfc(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<RfidNfc> getAllIdPersonasRfidNfc() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<RfidNfc> idPersonasRfidNfc = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -157,10 +164,11 @@ public class RfidNfcDAO {
         return idPersonasRfidNfc;
     }
     
-    public void updateRfidNfc (RfidNfc rn){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void updateRfidNfc (RfidNfc rn) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -208,10 +216,11 @@ public class RfidNfcDAO {
         }
     }
     
-    public void deleteRfidNfc (String idCarnet){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void deleteRfidNfc (String idCarnet) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {

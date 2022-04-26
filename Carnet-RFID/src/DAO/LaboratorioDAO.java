@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.Laboratorio;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LaboratorioDAO {
     
-    public void createLaboratorioIngreso (Laboratorio lb){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createLaboratorioIngreso (Laboratorio lb) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -33,10 +36,11 @@ public class LaboratorioDAO {
         }
     }
     
-    public void createLaboratorioSalida (Laboratorio lb){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createLaboratorioSalida (Laboratorio lb) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -59,10 +63,11 @@ public class LaboratorioDAO {
         }
     }
     
-    public Laboratorio getLaboratorioId (String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public Laboratorio getLaboratorioId (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         Laboratorio lb = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -92,10 +97,11 @@ public class LaboratorioDAO {
         return lb;
     }
     
-    public List<Laboratorio> getAllLaboratorios(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<Laboratorio> getAllLaboratorios() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<Laboratorio> Laboratorios = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);

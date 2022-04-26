@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.Administrativo;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdministrativoDAO {
     
-    public void createAdministrativo(Administrativo ad){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createAdministrativo(Administrativo ad) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try{
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -34,10 +37,11 @@ public class AdministrativoDAO {
         }
     }
     
-    public Administrativo getAdministrativoId (String idPersonaAdministrativo){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public Administrativo getAdministrativoId (String idPersonaAdministrativo) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         Administrativo ad = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -78,10 +82,11 @@ public class AdministrativoDAO {
         return ad;
     }
     
-    public List<Administrativo> getAllAdministrativo(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<Administrativo> getAllAdministrativo() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<Administrativo> Administrativos = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -119,10 +124,11 @@ public class AdministrativoDAO {
         return Administrativos;
     }
     
-    public void updateAdministrativo (Administrativo ad){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void updateAdministrativo (Administrativo ad) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -145,10 +151,11 @@ public class AdministrativoDAO {
         }
     }
     
-    public void deleteAdministrativo(String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void deleteAdministrativo(String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {

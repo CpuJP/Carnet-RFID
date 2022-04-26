@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.Docente;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DocenteDAO {
     
-    public void createDocente(Docente dc){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createDocente(Docente dc) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -36,10 +39,11 @@ public class DocenteDAO {
         }
     }
     
-    public Docente getDocenteId (String idPersonDocente){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public Docente getDocenteId (String idPersonDocente) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         Docente dc = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -82,10 +86,11 @@ public class DocenteDAO {
         return dc;
     }
     
-    public List<Docente> getAllDocentes(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<Docente> getAllDocentes() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<Docente> Docentes = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -124,10 +129,11 @@ public class DocenteDAO {
         return Docentes;
     }
     
-    public void updateDocente (Docente dc){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void updateDocente (Docente dc) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -152,10 +158,11 @@ public class DocenteDAO {
         }
     }
     
-    public void deleteDocentes (String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void deleteDocentes (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {

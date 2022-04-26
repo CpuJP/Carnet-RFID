@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.Prestamos;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrestamosDAO {
     
-    public void createPrestamosInicio(Prestamos pe){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createPrestamosInicio(Prestamos pe) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -36,10 +39,11 @@ public class PrestamosDAO {
         }
     }
     
-    public void createPrestamosFinal(Prestamos pe){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createPrestamosFinal(Prestamos pe) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -65,10 +69,11 @@ public class PrestamosDAO {
         }
     }
     
-    public Prestamos getPrestamosId (String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public Prestamos getPrestamosId (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         Prestamos pe = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -101,10 +106,11 @@ public class PrestamosDAO {
         return pe;
     }
     
-    public List<Prestamos> getAllPrestamos(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<Prestamos> getAllPrestamos() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<Prestamos> PrestamosT = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);

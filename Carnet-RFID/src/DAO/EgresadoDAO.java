@@ -1,16 +1,19 @@
 package DAO;
 
 import Model.Egresado;
+import Controller.ConexionBD;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EgresadoDAO {
     
-    public void createEgresado(Egresado eg){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void createEgresado(Egresado eg) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -35,10 +38,11 @@ public class EgresadoDAO {
         }
     }
     
-    public Egresado getEgresadoId (String idPersonaEgresado){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public Egresado getEgresadoId (String idPersonaEgresado) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         Egresado eg = null;
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -81,10 +85,11 @@ public class EgresadoDAO {
         return eg;
     }
     
-    public List<Egresado> getAllEgresados(){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public List<Egresado> getAllEgresados() throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         List<Egresado> Egresados = new ArrayList<>();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
@@ -123,10 +128,11 @@ public class EgresadoDAO {
         return Egresados;
     }
     
-    public void updateEgresado (Egresado eg){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void updateEgresado (Egresado eg) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
@@ -150,10 +156,11 @@ public class EgresadoDAO {
         }
     }
     
-    public void deleteEgresado (String idPersona){
-        String dbURL = "jdbc:mysql://localhost:3306/carnet";
-        String username = "root";
-        String password = "Juanpablo1870";
+    public void deleteEgresado (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
         try {
             Connection conn = DriverManager.getConnection(dbURL, username, password);
             if (conn != null) {
