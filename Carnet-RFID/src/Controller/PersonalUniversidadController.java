@@ -2,31 +2,32 @@ package Controller;
 
 import Model.PersonalUniversidad;
 import DAO.PersonalUniversidadDAO;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class PersonalUniversidadController {
     
-    public void savePersonalUniversidad(PersonalUniversidad pu){
+    public void savePersonalUniversidad(PersonalUniversidad pu) throws FileNotFoundException{
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         puDAO.createPersonalUniversidad(pu);
     }
     
-    public PersonalUniversidad getPersonalUniversidadById(String id){
+    public PersonalUniversidad getPersonalUniversidadById(String id) throws FileNotFoundException{
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         return puDAO.getPersonalUniverdidadId(id);
     }
     
-    public List<PersonalUniversidad> getAllPersonalUniversidad(){
+    public List<PersonalUniversidad> getAllPersonalUniversidad() throws FileNotFoundException{
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         return puDAO.getAllPersonasUniversidad();
     }
     
-    public void updatePersonalUniversidad(PersonalUniversidad pu){
+    public void updatePersonalUniversidad(PersonalUniversidad pu) throws FileNotFoundException{
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         puDAO.updatePersonalUniversidad(pu);
     }
     
-    public void deletePersonalUniversidad(String id){
+    public void deletePersonalUniversidad(String id) throws FileNotFoundException{
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         puDAO.deletePersonalUniversidad(id);
     }

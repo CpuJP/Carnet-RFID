@@ -133,31 +133,25 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="18" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jButton_Estudiante" max="32767" attributes="0"/>
-                                          <Component id="jButton_PersonalU" pref="149" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jButton_Administrador" max="32767" attributes="0"/>
-                                          <Component id="jButton_Docente" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jButton_Egresado" max="32767" attributes="0"/>
+                                  <Component id="jButton_Estudiante" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_PersonalU" alignment="0" pref="149" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jButton_Egresado" min="-2" pref="127" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jButton_Administrador" max="32767" attributes="0"/>
+                                  <Component id="jButton_Docente" max="32767" attributes="0"/>
+                                  <Component id="jButton_Carnet" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -177,7 +171,10 @@
                           <Component id="jButton_Estudiante" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton_Egresado" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jButton_Egresado" pref="47" max="32767" attributes="0"/>
+                          <Component id="jButton_Carnet" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -231,6 +228,14 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Selecciona a que entidad quiere acceder"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_Carnet">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Carnets"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_CarnetActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

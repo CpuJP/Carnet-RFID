@@ -7,7 +7,7 @@ id_carnet varchar(50) not null primary key
 	
 create table if not exists personal_universidad (
 id_persona varchar(15) not null primary key,
-tipo_id ENUM('Cedula Ciudadania', 'Tarjeta Identidad', 'Pasaporte', 'PEP', 'Visa'),
+tipo_id ENUM('Cedula Ciudadania', 'Tarjeta Identidad', 'Pasaporte', 'PEP', 'Visa', 'Cedula extranjería'),
 rfid_nfc_id_carnet varchar(50) not null,
 foreign key (rfid_nfc_id_carnet) references rfid_nfc(id_carnet),
 codigo varchar(15) not null,
