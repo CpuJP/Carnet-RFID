@@ -74,8 +74,10 @@ public class PersonalUDelete extends javax.swing.JDialog {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel3.setText("D.I");
 
+        jButton1.setFont(new java.awt.Font("Calibri Light", 3, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/delete48x48.png"))); // NOI18N
         jButton1.setText("Eliminar ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

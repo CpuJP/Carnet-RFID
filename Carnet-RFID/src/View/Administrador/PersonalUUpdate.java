@@ -102,8 +102,10 @@ public class PersonalUUpdate extends javax.swing.JDialog {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel3.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel3.setText("D.I");
 
+        jButton_CargarInfo.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_CargarInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Read48x48.png"))); // NOI18N
         jButton_CargarInfo.setText("Cargar");
         jButton_CargarInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -142,28 +144,37 @@ public class PersonalUUpdate extends javax.swing.JDialog {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel4.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel4.setText("Tipo D.I");
 
+        jLabel5.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel5.setText("Primer Nombre");
 
+        jLabel6.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel6.setText("Segundo Nombre");
 
+        jLabel7.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel7.setText("Primer Apellido");
 
+        jLabel8.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel8.setText("Segundo Apellido");
 
+        jLabel9.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel9.setText("Nacimiento");
 
         jDateChooser_Nacimiento.setDateFormatString("yyyy/MM/dd");
 
+        jLabel11.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel11.setText("Género");
 
         jComboBox_Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "No binario", "Intersexual", "Prefiero no decir", "Otro" }));
 
         jComboBox_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cedula Ciudadania", "Tarjeta Identidad", "Pasaporte", "PEP", "Visa", "Cedula extranjería" }));
 
+        jLabel10.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel10.setText("Email");
 
+        jLabel12.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel12.setText("Celular");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -256,11 +267,12 @@ public class PersonalUUpdate extends javax.swing.JDialog {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField_SegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton_GuardarInfo.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_GuardarInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/save48x48.png"))); // NOI18N
         jButton_GuardarInfo.setText("Guardar ");
         jButton_GuardarInfo.addActionListener(new java.awt.event.ActionListener() {

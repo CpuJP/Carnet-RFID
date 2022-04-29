@@ -243,6 +243,7 @@ public class PersonalU extends javax.swing.JDialog {
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton_Registrar.setBackground(new java.awt.Color(153, 255, 153));
+        jButton_Registrar.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_Registrar.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Registrar.setText("Registrar");
         jButton_Registrar.addActionListener(new java.awt.event.ActionListener() {
@@ -251,6 +252,7 @@ public class PersonalU extends javax.swing.JDialog {
             }
         });
 
+        jButton_ListaRegistrados.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_ListaRegistrados.setText("Lista registrados");
         jButton_ListaRegistrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +260,7 @@ public class PersonalU extends javax.swing.JDialog {
             }
         });
 
+        jButton_Limpiar.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_Limpiar.setText("Limpiar");
         jButton_Limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,6 +294,7 @@ public class PersonalU extends javax.swing.JDialog {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton_Actualizar.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_Actualizar.setText("Actualizar");
         jButton_Actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,7 +303,7 @@ public class PersonalU extends javax.swing.JDialog {
         });
 
         jButton_Eliminar.setBackground(new java.awt.Color(204, 0, 0));
-        jButton_Eliminar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jButton_Eliminar.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jButton_Eliminar.setText("Eliminar");
         jButton_Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

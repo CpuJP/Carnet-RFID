@@ -45,6 +45,7 @@ public class PersonalULista extends javax.swing.JDialog {
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jTable_PersonalU.setFont(new java.awt.Font("Calibri Light", 3, 14)); // NOI18N
         jTable_PersonalU.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null},
