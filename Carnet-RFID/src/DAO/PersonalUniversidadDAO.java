@@ -145,16 +145,16 @@ public class PersonalUniversidadDAO {
                     + "primer_apellido=?, segundo_apellido=?, fecha_nacimiento=?, genero=?, email=?, "
                     + "celular=? WHERE id_persona=?;";
             PreparedStatement statement = conn.prepareCall(sql);
-            statement.setString(1, pu.getIdPersona());
-            statement.setString(2, pu.getTipoId());
-            statement.setString(3, pu.getPrimerNombre());
-            statement.setString(4, pu.getSegundoNombre());
-            statement.setString(5, pu.getPrimerApellido());
-            statement.setString(6, pu.getSegundoApellido());
-            statement.setString(7, pu.getFechaNacimiento());
-            statement.setString(8, pu.getGenero());
-            statement.setString(9, pu.getEmail());
-            statement.setString(10, pu.getCelular());
+            statement.setString(1, pu.getTipoId());
+            statement.setString(2, pu.getPrimerNombre());
+            statement.setString(3, pu.getSegundoNombre());
+            statement.setString(4, pu.getPrimerApellido());
+            statement.setString(5, pu.getSegundoApellido());
+            statement.setString(6, pu.getFechaNacimiento());
+            statement.setString(7, pu.getGenero());
+            statement.setString(8, pu.getEmail());
+            statement.setString(9, pu.getCelular());
+            statement.setString(10, pu.getIdPersona());
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Actualización exitosa");

@@ -142,10 +142,10 @@ public class EgresadoDAO {
             }
             String sql = "UPDATE egresado SET facultad=?, carrera=?, ano_prom=? WHERE id_persona_egresado = ?";
             PreparedStatement statement = conn.prepareCall(sql);
-            statement.setString(1, eg.getIdPersonaEgresado());
-            statement.setString(2, eg.getFacultad());
-            statement.setString(3, eg.getCarrera());
-            statement.setString(4, eg.getAnioProm());
+            statement.setString(1, eg.getFacultad());
+            statement.setString(2, eg.getCarrera());
+            statement.setString(3, eg.getAnioProm());
+            statement.setString(4, eg.getIdPersonaEgresado());
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Actualización exitosa");

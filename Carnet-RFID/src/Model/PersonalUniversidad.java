@@ -28,6 +28,19 @@ public class PersonalUniversidad {
         this.email = email;
         this.celular = celular;
     }
+    
+    public PersonalUniversidad(String idPersona, String tipoId, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String fechaNacimiento, String genero, String email, String celular){
+        this.idPersona = idPersona;
+        this.tipoId = tipoId;
+        this.primerNombre = primerNombre;
+        this.segundoNombre = segundoNombre;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+        this.email = email;
+        this.celular = celular;
+    }
 
     public String getIdPersona() {
         return idPersona;

@@ -145,11 +145,11 @@ public class EstudianteDAO {
             }
             String sql = "UPDATE estudiante SET facultad=?, carrera=?, sede=?, semestre=? WHERE id_persona_estudiante=?";
             PreparedStatement statement = conn.prepareCall(sql);
-            statement.setString(1, et.getIdPersonaEstudiante());
-            statement.setString(2, et.getFacultad());
-            statement.setString(3, et.getCarrera());
-            statement.setString(4, et.getSede());
-            statement.setInt(5, et.getSemestre());
+            statement.setString(1, et.getFacultad());
+            statement.setString(2, et.getCarrera());
+            statement.setString(3, et.getSede());
+            statement.setInt(4, et.getSemestre());
+            statement.setString(5, et.getIdPersonaEstudiante());
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Actualización exitosa");

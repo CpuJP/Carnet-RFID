@@ -31,5 +31,9 @@ public class PersonalUniversidadController {
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         puDAO.deletePersonalUniversidad(id);
     }
+
+    public void deletePersonalUniversidad(int documento) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

@@ -65,6 +65,7 @@ public class PersonalU extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         jButton_Registrar = new javax.swing.JButton();
         jButton_ListaRegistrados = new javax.swing.JButton();
+        jButton_Limpiar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jButton_Actualizar = new javax.swing.JButton();
         jButton_Eliminar = new javax.swing.JButton();
@@ -81,7 +82,7 @@ public class PersonalU extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel2.setText("D.I");
 
-        jComboBox_TipoDI.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cedula Ciudadania", "Tarjeta Identidad", "Pasaporte", "PEP", "Visa" }));
+        jComboBox_TipoDI.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cedula Ciudadania", "Tarjeta Identidad", "Pasaporte", "PEP", "Visa", "Cedula extranjería" }));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel3.setText("Tipo D.I");
@@ -147,10 +148,9 @@ public class PersonalU extends javax.swing.JDialog {
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jTextField_DI)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField_Codigo, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField_IdCarnet, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jTextField_Codigo)
+                    .addComponent(jTextField_IdCarnet)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(51, 51, 51)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField_PrimerApellido)
@@ -258,15 +258,23 @@ public class PersonalU extends javax.swing.JDialog {
             }
         });
 
+        jButton_Limpiar.setText("Limpiar");
+        jButton_Limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_LimpiarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton_Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_ListaRegistrados, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton_Registrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_ListaRegistrados, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(jButton_Limpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -274,18 +282,30 @@ public class PersonalU extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton_ListaRegistrados, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_Limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jButton_ListaRegistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton_Actualizar.setText("Actualizar");
+        jButton_Actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ActualizarActionPerformed(evt);
+            }
+        });
 
         jButton_Eliminar.setBackground(new java.awt.Color(204, 0, 0));
         jButton_Eliminar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jButton_Eliminar.setText("Eliminar");
+        jButton_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -333,9 +353,9 @@ public class PersonalU extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -416,7 +436,8 @@ public class PersonalU extends javax.swing.JDialog {
                                             }else{
                                                 PersonalUniversidad pu = new PersonalUniversidad(id, tipo, idCarnet, codigo, primerNombre, segundoNombre, primerApellido, segundoApellido, fecha, genero, email, celular);
                                                 puc.savePersonalUniversidad(pu);
-                                                JOptionPane.showMessageDialog(null, "La persona con D.I: "+jTextField_DI.getText()+" re registró con éxito");                                            }
+                                                JOptionPane.showMessageDialog(null, "La persona con D.I: "+jTextField_DI.getText()+" re registró con éxito");                                            
+                                            }
                                         }
                                     }
                                 }
@@ -436,6 +457,32 @@ public class PersonalU extends javax.swing.JDialog {
         PersonalULista pul = new PersonalULista(null, false);
         pul.setVisible(true);
     }//GEN-LAST:event_jButton_ListaRegistradosActionPerformed
+
+    private void jButton_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ActualizarActionPerformed
+        // TODO add your handling code here:
+        PersonalUUpdate puu = new PersonalUUpdate(null, false);
+        puu.setVisible(true);
+    }//GEN-LAST:event_jButton_ActualizarActionPerformed
+
+    private void jButton_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarActionPerformed
+        // TODO add your handling code here:
+        PersonalUDelete pud = new PersonalUDelete(null, false);
+        pud.setVisible(true);
+    }//GEN-LAST:event_jButton_EliminarActionPerformed
+
+    private void jButton_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LimpiarActionPerformed
+        // TODO add your handling code here:
+        jTextField_DI.setText("");
+        jTextField_IdCarnet.setText("");
+        jTextField_Codigo.setText("");
+        jTextField_PrimerNombre.setText("");
+        jTextField_SegundoNombre.setText("");
+        jTextField_PrimerApellido.setText("");
+        jTextField_SegundoApellido.setText("");
+        jTextField_Email.setText("");
+        jTextField_Celular.setText("");
+        jDateChooser_FechaNacimiento.setDate(null);
+    }//GEN-LAST:event_jButton_LimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -483,6 +530,7 @@ public class PersonalU extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_Actualizar;
     private javax.swing.JButton jButton_Eliminar;
+    private javax.swing.JButton jButton_Limpiar;
     private javax.swing.JButton jButton_ListaRegistrados;
     private javax.swing.JButton jButton_Registrar;
     private javax.swing.JComboBox<String> jComboBox_Genero;

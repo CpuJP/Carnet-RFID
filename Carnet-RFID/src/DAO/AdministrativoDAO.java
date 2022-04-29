@@ -138,9 +138,9 @@ public class AdministrativoDAO {
             }
             String sql = "UPDATE administrativo SET cargo=?, sede=? WHERE id_persona_administrativo =?";
             PreparedStatement statement = conn.prepareCall(sql);
-            statement.setString(1, ad.getIdPersonaAdministrativo());
-            statement.setString(2, ad.getCargo());
-            statement.setString(3, ad.getSede());
+            statement.setString(1, ad.getCargo());
+            statement.setString(2, ad.getSede());
+            statement.setString(3, ad.getIdPersonaAdministrativo());
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Actualización exitosa");
