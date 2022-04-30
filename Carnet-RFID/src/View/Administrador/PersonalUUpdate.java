@@ -397,10 +397,38 @@ public class PersonalUUpdate extends javax.swing.JDialog {
         String email = jTextField_Email.getText();
         String celular = jTextField_Celular.getText();
         String id = jTextField_Di.getText();
-        PersonalUniversidad pu = new PersonalUniversidad(id, tipo, primerNombre, segundoNombre, primerApellido, segundoApellido, fecha, genero, email, celular);
         try {
-            puc.updatePersonalUniversidad(pu);
-            JOptionPane.showMessageDialog(null, "la persona con documento: "+jTextField_Di.getText()+"\nse modificó con éxito");
+            if (id.length() <= 4 || id.length() >15) {
+                JOptionPane.showMessageDialog(null, "Revisar información de DOCUMENTO DE INDENTIDAD\nLongitud Mínima de 4 números\nLongitud Máximea de 15 números");
+            }else{
+                if(primerNombre.length() <= 2 || primerNombre.length() > 15){
+                    JOptionPane.showMessageDialog(null, "Revisar información de PRIMER NOMBRE\nLongitud Mínima de 2 letras\nLogitud Máxima de 15 letras");
+                }else{
+                    if(segundoNombre.length() > 15){
+                        JOptionPane.showMessageDialog(null, "Revisar información de SEGUNDO NOMBRE\nLongitud Máxima de 15 letras");
+                    }else{
+                        if(primerApellido.length() <= 2 || primerApellido.length() > 15){
+                            JOptionPane.showMessageDialog(null, "Revisar información de PRIMER APELLIDO\nLongitud Mínima de 2 letras\nLongitud Máxima de 15 letras");
+                        }else{
+                            if(segundoApellido.length() > 15){
+                                JOptionPane.showMessageDialog(null, "Revisar Información de SEGUNDO APELLIDO\nLongitud Máxima de 15 letras");
+                            }else{
+                                if(email.length() <= 5 || email.length() > 100){
+                                    JOptionPane.showMessageDialog(null, "Revisar información de EMAIL\nLongitud Mínima de 5 letras\nLongitud Máxima de 100 letras");
+                                }else{
+                                    if(celular.length() <= 3 || celular.length() > 13){
+                                        JOptionPane.showMessageDialog(null, "Revisar información de CELULAR\nLongitud Mínima de 10 números\nLongitud Máxima de 13 números");
+                                    }else{
+                                        PersonalUniversidad pu = new PersonalUniversidad(id, tipo, primerNombre, segundoNombre, primerApellido, segundoApellido, fecha, genero, email, celular);
+                                        puc.updatePersonalUniversidad(pu);
+                                        JOptionPane.showMessageDialog(null, "la persona con documento: "+jTextField_Di.getText()+"\nse modificó con éxito");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(PersonalUUpdate.class.getName()).log(Level.SEVERE, null, ex);
         }

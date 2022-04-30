@@ -204,7 +204,7 @@ public class Menu extends javax.swing.JDialog {
 
     private void jButton_AdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AdministradorActionPerformed
         // TODO add your handling code here:
-        Administrado ad = new Administrado(null, false);
+        Administrador ad = new Administrador(null, false);
         ad.setVisible(true);
     }//GEN-LAST:event_jButton_AdministradorActionPerformed
 

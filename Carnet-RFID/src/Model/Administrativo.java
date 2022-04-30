@@ -15,8 +15,8 @@ public class Administrativo {
    private String idPersonaAdministrativo;
    private String idRfidNfcAdministrativo;
 
-    public Administrativo(String idPersona, String tipoId, String codigo, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String email, String celular, String cargo, String sede) {
-        this.idPersona = idPersona;
+    public Administrativo(String idPersonaAdministrativo, String tipoId, String codigo, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String email, String celular, String cargo, String sede) {
+        this.idPersonaAdministrativo = idPersonaAdministrativo;
         this.tipoId = tipoId;
         this.codigo = codigo;
         this.primerNombre = primerNombre;
@@ -25,6 +25,19 @@ public class Administrativo {
         this.segundoApellido = segundoApellido;
         this.email = email;
         this.celular = celular;
+        this.cargo = cargo;
+        this.sede = sede;
+    }
+    
+    public Administrativo(String idPersonaAdministrativo, String cargo, String sede, String idRfidNfcAdministrativo){
+        this.idPersonaAdministrativo = idPersonaAdministrativo;
+        this.cargo = cargo;
+        this.sede = sede;
+        this.idRfidNfcAdministrativo = idRfidNfcAdministrativo;
+    }
+    
+    public Administrativo(String idPersonaAdministrativo, String cargo, String sede){
+        this.idPersonaAdministrativo = idPersonaAdministrativo;
         this.cargo = cargo;
         this.sede = sede;
     }

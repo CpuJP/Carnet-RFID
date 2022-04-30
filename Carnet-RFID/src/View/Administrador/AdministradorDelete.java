@@ -4,19 +4,22 @@
  */
 package View.Administrador;
 
-import Controller.PersonalUniversidadController;
+import Controller.AdministradorController;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author jp-co
  */
-public class PersonalUDelete extends javax.swing.JDialog {
+public class AdministradorDelete extends javax.swing.JDialog {
 
     /**
-     * Creates new form PersonalUDelete
+     * Creates new form AdministradorDelete
      */
-    public PersonalUDelete(java.awt.Frame parent, boolean modal) {
+    public AdministradorDelete(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -44,7 +47,7 @@ public class PersonalUDelete extends javax.swing.JDialog {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel1.setText("Para eliminar una persona del registro");
+        jLabel1.setText("Para eliminar un administrativo del registro");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel2.setText("de la universidad ingrese el documento");
@@ -53,14 +56,14 @@ public class PersonalUDelete extends javax.swing.JDialog {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(55, 55, 55))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,21 +126,21 @@ public class PersonalUDelete extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
+                        .addGap(125, 125, 125)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(21, 21, 21)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,24 +163,28 @@ public class PersonalUDelete extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField_DiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_DiActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        PersonalUniversidadController puc = new PersonalUniversidadController();
+        AdministradorController adc = new AdministradorController();
         String documento = jTextField_Di.getText();
-        
+
         if (documento.length() <= 4 || documento.length() >15 ) {
             JOptionPane.showMessageDialog(null, "Revisar información de DOCUMENTO DE INDENTIDAD\nLongitud Mínima de 4 números\nLongitud Máximea de 15 números");
         } else {
             int di = Integer.parseInt(documento);
-            puc.deletePersonalUniversidad(di);
-            JOptionPane.showMessageDialog(rootPane, "La persona con documento: "+jTextField_Di.getText()+"\n se eliminó de toda la base de datos con éxito");
+            try {
+                adc.deleteAdministrativo(documento);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(AdministradorDelete.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(rootPane, "El administrativo con documento: "+jTextField_Di.getText()+"\n se eliminó de toda la base de datos con éxito");
         }
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField_DiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_DiActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,20 +203,20 @@ public class PersonalUDelete extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PersonalUDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministradorDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PersonalUDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministradorDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PersonalUDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministradorDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PersonalUDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdministradorDelete.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PersonalUDelete dialog = new PersonalUDelete(new javax.swing.JFrame(), true);
+                AdministradorDelete dialog = new AdministradorDelete(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -38,6 +38,7 @@ UPDATE administrativo SET cargo='Auxiliar de sistemas', sede = 'Soacha' WHERE id
 update docentes set tipo='Propio', cargo='Catedra', facultad='Ingeniería', sede='Facatativá' where id_persona_docente='1007668974';
 UPDATE egresado set facultad='Ciencias Agropecuarias', carrera='Agrónoma', ano_prom='2022-2' WHERE id_persona_egresado = '1007668974';
 UPDATE estudiante SET facultad='Ciencias del Deporte', carrera='Educación Física', sede='Soacha', semestre='6' WHERE id_persona_estudiante='1007668974';
+use carnet;
 UPDATE personal_universidad SET tipo_id ='Visa', primer_nombre='Carlos', segundo_nombre='Arturo', primer_apellido='Rodrigo', segundo_apellido='Perez', fecha_nacimiento='1999-11-27', genero='Intersexual', email='cpujuanpis@gmail.com', celular='3213212412' WHERE id_persona='1007668974';
 use carnet;
 DELETE FROM docentes WHERE id_persona_docente ='1007668974';
@@ -69,3 +70,8 @@ insert into carnet.prestamos (nombre_objeto, inicio_prestamo, origen, id_persona
 use carnet;
 SELECT id_persona FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = '12345';
 SELECT id_persona, rfid_nfc_id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.id_persona = '1007668974';
+SELECT id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = ;
+SELECT * FROM carnet.personal_universidad;
+use carnet;
+SELECT rfid_nfc_id_carnet FROM personal_universidad WHERE id_persona = "1007668974";
+SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, cargo, sede FROM carnet.personal_universidad, carnet.administrativo WHERE personal_universidad.id_persona = administrativo.id_persona_administrativo;

@@ -17,6 +17,11 @@ public class RfidNfcController {
         return rnDAO.getPersonaURfidNfc(RfidNfc);
     }
     
+    public RfidNfc getIdRfidNfcByIdPersona(String idPersona) throws FileNotFoundException{
+        RfidNfcDAO rnDAO = new RfidNfcDAO();
+        return rnDAO.getIdRfidNfcByIdPersona(idPersona);
+    }
+    
     public RfidNfc getIdPersonaAndIdRfidNfcByRfidNfc(String RfidNfc) throws FileNotFoundException{
         RfidNfcDAO rnDAO = new RfidNfcDAO();
         return rnDAO.getIdPersonaRAndfidNfcByRfidNfc(RfidNfc);

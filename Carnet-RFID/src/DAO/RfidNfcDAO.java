@@ -67,6 +67,37 @@ public class RfidNfcDAO {
         return rn;
     }
     
+    public RfidNfc getIdRfidNfcByIdPersona (String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
+        RfidNfc rn = null;
+        try {
+            Connection conn = DriverManager.getConnection(dbURL, username, password);
+            if (conn != null) {
+                System.out.println("Conexión exitosa");
+            }else{
+                System.out.println("Problemas al conectar");
+            }
+            String sql = "SELECT rfid_nfc_id_carnet FROM personal_universidad WHERE id_persona = ?";
+            PreparedStatement statement = conn.prepareCall(sql);
+            statement.setString(1, idPersona);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                String idPersonaRfidNfc = rs.getString(1);
+                rn = new RfidNfc(idPersonaRfidNfc, idPersona);
+                conn.close();
+            } else {
+                rn = new RfidNfc(null, null);
+            }
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return rn;
+    }
+    
     public RfidNfc getIdPersonaRAndfidNfcByRfidNfc (String idRfidNfc) throws FileNotFoundException{
         ConexionBD cBD = new ConexionBD();
         String dbURL = cBD.getURL();
