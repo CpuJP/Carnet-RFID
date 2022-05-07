@@ -159,34 +159,25 @@ public class IngresoMain extends javax.swing.JFrame {
 
     private void jButton_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_IngresarActionPerformed
         // TODO add your handling code here:
-        
-        RfidNfcController rfidc = new RfidNfcController();
-        PersonalUniversidadController puc = new PersonalUniversidadController();
-        
-        String codigoCarnet = jTextField_CodigoCarnet.getText();     
-        
+        RfidNfcController rficC = new RfidNfcController();
+        String id = jTextField_CodigoCarnet.getText();
         try {
-            RfidNfc rfid = rfidc.getIdPersonaByRfidNfc(codigoCarnet);
-            PersonalUniversidad pu = puc.getPersonalUniversidadById(rfid.getIdPersona());
-            
-            String nombre = pu.getPrimerNombre();
-            
-            if (codigoCarnet.length() <= 3 || codigoCarnet.length() > 50) {
-                JOptionPane.showMessageDialog(null, "Codigo invalido\nLongitud Mínima de 15 números\nLongitud Máxima de 50 números");
-            } else{
-                if (rfid.getIdCarnet() == null) {
-                    JOptionPane.showMessageDialog(null, "El codigo ingresado no pertenece a ninguna persona");
-                }else{
-                    JOptionPane.showMessageDialog(null, "Acceso Concedido - Bienvenido "+nombre+"! ");
-                }
-            }                     
-            
-            jTextField_CodigoCarnet.setText("");
-                       
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(PersonalUUpdate.class.getName()).log(Level.SEVERE, null, ex);
+            RfidNfc rfidM = rficC.getIdPersonaByRfidNfc(id);
+            if (rfidM.getIdCarnet() == null) {
+                JOptionPane.showMessageDialog(null, "El carnet no pertenece a ninguna persona registrada en la Universidad");
+            } else {
+                String idpersona = rfidM.getIdCarnet();
+                PersonalUniversidadController puc = new PersonalUniversidadController();
+                PersonalUniversidad pu = puc.getFullNameById(idpersona);
+                String primerNombre = pu.getPrimerNombre();
+                String segundoNombre = pu.getSegundoNombre();
+                String primerApellido = pu.getPrimerApellido();
+                String segundoApellido = pu.getSegundoApellido();
+                JOptionPane.showMessageDialog(null, "Acceso concedido - Bienvenido \n"+primerNombre+" "+segundoNombre
+                +" "+primerApellido+" "+segundoApellido);
+            }
+        } catch (Exception e) {
         }
-        
     }//GEN-LAST:event_jButton_IngresarActionPerformed
 
     /**

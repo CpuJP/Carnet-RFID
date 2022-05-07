@@ -198,37 +198,37 @@ public class Menu extends javax.swing.JDialog {
 
     private void jButton_PersonalUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PersonalUActionPerformed
         // TODO add your handling code here:
-        PersonalU pu = new PersonalU(null, false);
+        PersonalU pu = new PersonalU(null, true);
         pu.setVisible(true);
     }//GEN-LAST:event_jButton_PersonalUActionPerformed
 
     private void jButton_AdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AdministradorActionPerformed
         // TODO add your handling code here:
-        Administrador ad = new Administrador(null, false);
+        Administrador ad = new Administrador(null, true);
         ad.setVisible(true);
     }//GEN-LAST:event_jButton_AdministradorActionPerformed
 
     private void jButton_EstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EstudianteActionPerformed
         // TODO add your handling code here:
-        Estudiante es = new Estudiante(null, false);
+        Estudiante es = new Estudiante(null, true);
         es.setVisible(true);
     }//GEN-LAST:event_jButton_EstudianteActionPerformed
 
     private void jButton_DocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DocenteActionPerformed
         // TODO add your handling code here:
-        Docente dc = new Docente(null, false);
+        Docente dc = new Docente(null, true);
         dc.setVisible(true);
     }//GEN-LAST:event_jButton_DocenteActionPerformed
 
     private void jButton_EgresadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EgresadoActionPerformed
         // TODO add your handling code here:
-        Egresado eg = new Egresado(null, false);
+        Egresado eg = new Egresado(null, true);
         eg.setVisible(true);
     }//GEN-LAST:event_jButton_EgresadoActionPerformed
 
     private void jButton_CarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CarnetActionPerformed
         // TODO add your handling code here:
-        Carnet ct = new Carnet(null, false);
+        Carnet ct = new Carnet(null, true);
         ct.setVisible(true);
     }//GEN-LAST:event_jButton_CarnetActionPerformed
 

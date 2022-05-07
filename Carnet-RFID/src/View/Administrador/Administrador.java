@@ -97,10 +97,9 @@ public class Administrador extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel_IdCarnet, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
                     .addComponent(jLabel5)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel4)
-                        .addComponent(jTextField_DI)
-                        .addComponent(jButton_CargarIdCarnet, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField_DI)
+                    .addComponent(jButton_CargarIdCarnet, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -179,6 +178,11 @@ public class Administrador extends javax.swing.JDialog {
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
+            }
+        });
 
         jButton_Eliminar.setText("Eliminar");
         jButton_Eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -311,15 +315,21 @@ public class Administrador extends javax.swing.JDialog {
 
     private void jButton_ListaRegistradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ListaRegistradosActionPerformed
         // TODO add your handling code here:
-        AdministradorLista adl = new AdministradorLista(null, false);
+        AdministradorLista adl = new AdministradorLista(null, true);
         adl.setVisible(true);
     }//GEN-LAST:event_jButton_ListaRegistradosActionPerformed
 
     private void jButton_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarActionPerformed
         // TODO add your handling code here:
-        AdministradorDelete add = new AdministradorDelete(null, false);
+        AdministradorDelete add = new AdministradorDelete(null, true);
         add.setVisible(true);
     }//GEN-LAST:event_jButton_EliminarActionPerformed
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        // TODO add your handling code here:
+        AdministradorUpdate adu = new AdministradorUpdate(null, true);
+        adu.setVisible(true);
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     /**
      * @param args the command line arguments

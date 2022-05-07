@@ -17,6 +17,11 @@ public class PersonalUniversidadController {
         return puDAO.getPersonalUniverdidadId(id);
     }
     
+    public PersonalUniversidad getFullNameById(String idPersona) throws FileNotFoundException{
+        PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
+        return puDAO.getFullNameByIdPersona(idPersona);
+    }
+    
     public List<PersonalUniversidad> getAllPersonalUniversidad() throws FileNotFoundException{
         PersonalUniversidadDAO puDAO = new PersonalUniversidadDAO();
         return puDAO.getAllPersonasUniversidad();

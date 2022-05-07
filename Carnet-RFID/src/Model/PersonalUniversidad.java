@@ -41,6 +41,14 @@ public class PersonalUniversidad {
         this.email = email;
         this.celular = celular;
     }
+    
+    public PersonalUniversidad(String primerNombre, String segundoNombre, String primerApellido, String segundoApellido){
+        this.primerNombre = primerNombre;
+        this.segundoNombre = segundoNombre;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
+    }
+
 
     public String getIdPersona() {
         return idPersona;

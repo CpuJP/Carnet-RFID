@@ -45,6 +45,40 @@ public class PersonalUniversidadDAO {
         }
     }
     
+    public PersonalUniversidad getFullNameByIdPersona(String idPersona) throws FileNotFoundException{
+        ConexionBD cBD = new ConexionBD();
+        String dbURL = cBD.getURL();
+        String username = cBD.getUSER();
+        String password = cBD.getPASSWORD();
+        PersonalUniversidad pu = null;
+        try {
+            Connection conn = DriverManager.getConnection(dbURL, username, password);
+            if (conn != null) {
+                System.out.println("Conexión exitosa");
+            }else{
+                System.out.println("Problemas al conectar");
+            }
+            String sql = "select primer_nombre, segundo_nombre, primer_apellido, segundo_apellido from personal_universidad where id_persona = ?";
+            PreparedStatement statement = conn.prepareCall(sql);
+            statement.setString(1, idPersona);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                String primerNombre = rs.getString(1);
+                String segundoNombre = rs.getString(2);
+                String primerApellido = rs.getString(3);
+                String segundoApellido = rs.getString(4);
+                pu = new PersonalUniversidad(primerNombre, segundoNombre, primerApellido, segundoApellido);
+                conn.close();
+            } else {
+                pu = new PersonalUniversidad(null, null, null, null);
+            }
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return pu;
+    }
+    
     public PersonalUniversidad getPersonalUniverdidadId (String idPersona) throws FileNotFoundException {
         ConexionBD cBD = new ConexionBD();
         String dbURL = cBD.getURL();

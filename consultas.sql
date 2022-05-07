@@ -75,3 +75,6 @@ SELECT * FROM carnet.personal_universidad;
 use carnet;
 SELECT rfid_nfc_id_carnet FROM personal_universidad WHERE id_persona = "1007668974";
 SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, cargo, sede FROM carnet.personal_universidad, carnet.administrativo WHERE personal_universidad.id_persona = administrativo.id_persona_administrativo;
+use carnet;
+select primer_nombre, segundo_nombre, primer_apellido, segundo_apellido from personal_universidad where id_persona = '1007668974';
+SELECT id_persona FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = '12345';

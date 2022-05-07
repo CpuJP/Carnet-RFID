@@ -458,19 +458,19 @@ public class PersonalU extends javax.swing.JDialog {
 
     private void jButton_ListaRegistradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ListaRegistradosActionPerformed
         // TODO add your handling code here:
-        PersonalULista pul = new PersonalULista(null, false);
+        PersonalULista pul = new PersonalULista(null, true);
         pul.setVisible(true);
     }//GEN-LAST:event_jButton_ListaRegistradosActionPerformed
 
     private void jButton_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ActualizarActionPerformed
         // TODO add your handling code here:
-        PersonalUUpdate puu = new PersonalUUpdate(null, false);
+        PersonalUUpdate puu = new PersonalUUpdate(null, true);
         puu.setVisible(true);
     }//GEN-LAST:event_jButton_ActualizarActionPerformed
 
     private void jButton_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EliminarActionPerformed
         // TODO add your handling code here:
-        PersonalUDelete pud = new PersonalUDelete(null, false);
+        PersonalUDelete pud = new PersonalUDelete(null, true);
         pud.setVisible(true);
     }//GEN-LAST:event_jButton_EliminarActionPerformed
 
