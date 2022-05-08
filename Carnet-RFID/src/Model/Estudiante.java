@@ -32,6 +32,23 @@ public class Estudiante {
         this.sede = sede;
         this.semestre = semestre;
     }
+    
+    public Estudiante(String facultad, String carrera, String sede, Integer semestre, String idPersonaEstudiante, String idRfidNfcEstudiante){
+        this.facultad = facultad;
+        this.carrera = carrera;
+        this.sede = sede;
+        this.semestre = semestre;
+        this.idPersonaEstudiante = idPersonaEstudiante;
+        this.idRfidNfcEstudiante = idRfidNfcEstudiante;
+    }
+    
+    public Estudiante(String facultad, String carrera, String sede, Integer semestre, String idPersonaEstudiante){
+        this.facultad = facultad;
+        this.carrera = carrera;
+        this.sede = sede;
+        this.semestre = semestre;
+        this.idPersonaEstudiante = idPersonaEstudiante;
+    }
 
     public String getIdPersona() {
         return idPersona;

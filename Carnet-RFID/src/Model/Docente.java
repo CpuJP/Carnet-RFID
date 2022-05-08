@@ -17,10 +17,10 @@ public class Docente {
     private String idPersonaDocente;
     private String idRfidNfcDocente;
 
-    public Docente(String idPersona, String tipoId, String codigo, String primerNombre, String segundoNombre, 
+    public Docente(String idPersonaDocente, String tipoId, String codigo, String primerNombre, String segundoNombre, 
             String primerApellido, String segundoApellido, String email, String celular, String tipo, 
             String cargo, String facultad, String sede) {
-        this.idPersona = idPersona;
+        this.idPersonaDocente = idPersonaDocente;
         this.tipoId = tipoId;
         this.codigo = codigo;
         this.primerNombre = primerNombre;
@@ -34,7 +34,24 @@ public class Docente {
         this.facultad = facultad;
         this.sede = sede;
     }
-
+    
+    public Docente(String tipo, String cargo, String facultad, String sede, String idPersonaDocente, String idRfidNfcDocente) {
+        this.idPersonaDocente = idPersonaDocente;
+        this.tipo = tipo;
+        this.cargo = cargo;
+        this.facultad = facultad;
+        this.sede = sede;
+        this.idRfidNfcDocente = idRfidNfcDocente;
+    }
+    
+     public Docente(String tipo, String cargo, String facultad, String sede, String idPersonaDocente) {
+        this.idPersonaDocente = idPersonaDocente;
+        this.tipo = tipo;
+        this.cargo = cargo;
+        this.facultad = facultad;
+        this.sede = sede;
+    }
+    
     public String getIdPersona() {
         return idPersona;
     }

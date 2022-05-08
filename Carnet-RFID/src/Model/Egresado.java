@@ -16,8 +16,8 @@ public class Egresado {
     private String idPersonaEgresado;
     private String idRfidNfcEgresado;
 
-    public Egresado(String idPersona, String tipoId, String codigo, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String email, String celular, String facultad, String carrera, String anioProm) {
-        this.idPersona = idPersona;
+    public Egresado(String idPersonaEgresado, String tipoId, String codigo, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String email, String celular, String facultad, String carrera, String anioProm) {
+        this.idPersonaEgresado = idPersonaEgresado;
         this.tipoId = tipoId;
         this.codigo = codigo;
         this.primerNombre = primerNombre;
@@ -26,6 +26,21 @@ public class Egresado {
         this.segundoApellido = segundoApellido;
         this.email = email;
         this.celular = celular;
+        this.facultad = facultad;
+        this.carrera = carrera;
+        this.anioProm = anioProm;
+    }
+    
+    public Egresado(String facultad, String carrera, String anioProm, String idPersonaEgresado, String idRfidNfcEgresado){
+        this.idPersonaEgresado = idPersonaEgresado;
+        this.facultad = facultad;
+        this.carrera = carrera;
+        this.anioProm = anioProm;
+        this.idRfidNfcEgresado = idRfidNfcEgresado;
+    }
+    
+    public Egresado(String facultad, String carrera, String anioProm, String idPersonaEgresado){
+        this.idPersonaEgresado = idPersonaEgresado;
         this.facultad = facultad;
         this.carrera = carrera;
         this.anioProm = anioProm;

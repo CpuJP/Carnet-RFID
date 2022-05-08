@@ -101,7 +101,7 @@ public class DocenteDAO {
             }
             String sql = "SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, "
                     + "segundo_apellido, email, celular, tipo, cargo, facultad, sede FROM docentes, "
-                    + "personal_universidad WHERE docentes.id_persona_docente = personal_universidad.id_person";
+                    + "personal_universidad WHERE docentes.id_persona_docente = personal_universidad.id_persona";
             PreparedStatement statement = conn.prepareCall(sql);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {

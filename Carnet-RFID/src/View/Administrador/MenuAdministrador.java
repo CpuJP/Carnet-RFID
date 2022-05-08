@@ -8,12 +8,12 @@ package View.Administrador;
  *
  * @author jp-co
  */
-public class Menu extends javax.swing.JDialog {
+public class MenuAdministrador extends javax.swing.JDialog {
 
     /**
      * Creates new form Admin
      */
-    public Menu(java.awt.Frame parent, boolean modal) {
+    public MenuAdministrador(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -67,7 +67,7 @@ public class Menu extends javax.swing.JDialog {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton_Administrador.setText("Administrador");
+        jButton_Administrador.setText("Administrativo");
         jButton_Administrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_AdministradorActionPerformed(evt);
@@ -210,19 +210,19 @@ public class Menu extends javax.swing.JDialog {
 
     private void jButton_EstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EstudianteActionPerformed
         // TODO add your handling code here:
-        Estudiante es = new Estudiante(null, true);
+        Estudiantes es = new Estudiantes(null, true);
         es.setVisible(true);
     }//GEN-LAST:event_jButton_EstudianteActionPerformed
 
     private void jButton_DocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DocenteActionPerformed
         // TODO add your handling code here:
-        Docente dc = new Docente(null, true);
+        Docentes dc = new Docentes(null, true);
         dc.setVisible(true);
     }//GEN-LAST:event_jButton_DocenteActionPerformed
 
     private void jButton_EgresadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EgresadoActionPerformed
         // TODO add your handling code here:
-        Egresado eg = new Egresado(null, true);
+        Egresados eg = new Egresados(null, true);
         eg.setVisible(true);
     }//GEN-LAST:event_jButton_EgresadoActionPerformed
 
@@ -249,21 +249,23 @@ public class Menu extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Menu dialog = new Menu(new javax.swing.JFrame(), true);
+                MenuAdministrador dialog = new MenuAdministrador(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
