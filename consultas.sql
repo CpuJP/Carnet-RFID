@@ -78,3 +78,7 @@ SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apelli
 use carnet;
 select primer_nombre, segundo_nombre, primer_apellido, segundo_apellido from personal_universidad where id_persona = '1007668974';
 SELECT id_persona FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = '12345';
+use carnet;
+SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, facultad, carrera, sede, semestre FROM estudiante, personal_universidad WHERE estudiante.id_persona_estudiante = personal_universidad.id_persona;
+SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, tipo, cargo, facultad, sede FROM docentes, personal_universidad WHERE docentes.id_persona_docente = personal_universidad.id_persona;
+SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, celular, facultad, carrera, ano_prom FROM egresado, personal_universidad WHERE egresado.id_persona_egresado = personal_universidad.id_persona;
