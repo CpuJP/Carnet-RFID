@@ -91,6 +91,11 @@ public class PersonalU extends javax.swing.JDialog {
         jLabel4.setText("I.D Carnet");
 
         jButton1.setText("Carnet Registrados");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel5.setText("Código");
@@ -487,6 +492,11 @@ public class PersonalU extends javax.swing.JDialog {
         jTextField_Celular.setText("");
         jDateChooser_FechaNacimiento.setDate(null);
     }//GEN-LAST:event_jButton_LimpiarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -109,7 +109,8 @@ origen ENUM('Bienestar', 'Biblioteca', 'Sala de Computo') not null,
 id_persona varchar(15) not null,
 foreign key (id_persona) references personal_universidad(id_persona),
 id_rfid_nfc varchar(50) not null,
-foreign key (id_rfid_nfc) references rfid_nfc(id_carnet)
+foreign key (id_rfid_nfc) references rfid_nfc(id_carnet),
+estado ENUM('Disponible', 'Prestado', 'Pendiente', 'NO devuelto') not null
 );
 
 create table if not exists laboratorio (

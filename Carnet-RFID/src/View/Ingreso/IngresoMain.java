@@ -47,6 +47,10 @@ public class IngresoMain extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         jTextField_CodigoCarnet.setFont(new java.awt.Font("Malvie Trial", 0, 18)); // NOI18N
         jTextField_CodigoCarnet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,11 +58,12 @@ public class IngresoMain extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Malvie Trial", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
         jLabel3.setText("Codigo del carnet");
 
         jButton_Ingresar.setBackground(new java.awt.Color(102, 255, 51));
-        jButton_Ingresar.setFont(new java.awt.Font("Malvie Trial", 0, 18)); // NOI18N
+        jButton_Ingresar.setFont(new java.awt.Font("Calibri", 3, 18)); // NOI18N
+        jButton_Ingresar.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Ingresar.setText("Ingresar");
         jButton_Ingresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton_Ingresar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,10 +101,10 @@ public class IngresoMain extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel4.setFont(new java.awt.Font("Malvie Trial", 0, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 3, 48)); // NOI18N
         jLabel4.setText("Ingreso");
 
-        jLabel2.setFont(new java.awt.Font("Malvie Trial", 0, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 3, 48)); // NOI18N
         jLabel2.setText("Personal Universitario");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -113,7 +118,7 @@ public class IngresoMain extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

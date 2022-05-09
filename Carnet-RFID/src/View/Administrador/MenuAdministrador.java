@@ -228,7 +228,7 @@ public class MenuAdministrador extends javax.swing.JDialog {
 
     private void jButton_CarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CarnetActionPerformed
         // TODO add your handling code here:
-        Carnet ct = new Carnet(null, true);
+        Carnets ct = new Carnets(null, true);
         ct.setVisible(true);
     }//GEN-LAST:event_jButton_CarnetActionPerformed
 

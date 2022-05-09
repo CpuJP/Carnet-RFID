@@ -178,14 +178,19 @@ public class RfidNfcDAO {
             }else{
                 System.out.println("Problemas al conectar");
             }
-            String sql = "SELECT id_persona, rfid_nfc_id_carnet FROM personal_universidad JOIN "
-                    + "rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet";
+            String sql = "SELECT id_persona, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, "
+                    + "rfid_nfc_id_carnet FROM personal_universidad JOIN rfid_nfc ON "
+                    + "personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet";
             PreparedStatement statement = conn.prepareCall(sql);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 String idPersona = rs.getString(1);
-                String idPersonaRfidNfc = rs.getString(2);
-                RfidNfc rn = new RfidNfc(idPersonaRfidNfc, idPersona);
+                String primerNombre = rs.getString(2);
+                String segundoNombre = rs.getString(3);
+                String primerApellido = rs.getString(4);
+                String segundoApellido = rs.getString(5);
+                String idPersonaRfidNfc = rs.getString(6);
+                RfidNfc rn = new RfidNfc(idPersonaRfidNfc, idPersona, primerNombre, segundoNombre, primerApellido, segundoApellido);
                 idPersonasRfidNfc.add(rn);
             }
             conn.close();
