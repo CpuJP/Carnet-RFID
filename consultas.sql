@@ -85,3 +85,5 @@ SELECT id_persona, tipo_id, codigo, primer_nombre, segundo_nombre, primer_apelli
 use carnet;
 SELECT rfid_nfc_id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet != rfid_nfc.id_carnet;
 SELECT * FROM carnet.prestamos where id_persona ='1007668974' and nombre_objeto like '%p%';
+SELECT id, usuario, contraseña, nombre, id_tipo FROM usuario WHERE usuario = 'admin';
+SELECT u.id, u.usuario, u.contraseña, u.nombre, u.id_tipo, t.nombre FROM usuario AS u INNER JOIN tipo_usuario AS t ON u.id_tipo = t.id WHERE usuario = 'admin';

@@ -4,7 +4,17 @@
  */
 package View.Prestamo;
 
+import Controller.PersonalUniversidadController;
+import Controller.PrestamosController;
+import Controller.RfidNfcController;
+import Model.PersonalUniversidad;
+import Model.Prestamos;
+import Model.RfidNfc;
 import View.Registro.home;
+import java.awt.Color;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,6 +44,17 @@ public class PrestamosMain extends javax.swing.JFrame {
         jButton_inicio = new javax.swing.JButton();
         jButton_Final = new javax.swing.JButton();
         jButton_lista = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField_NombreObjeto = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox_Origen = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel_fechaHora = new javax.swing.JLabel();
+        jTextField_Idcarnet = new javax.swing.JTextField();
+        jLabel_Confirmacion = new javax.swing.JLabel();
+        jLabel_mensajePrestamo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -49,6 +70,9 @@ public class PrestamosMain extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton_inicio.setBackground(new java.awt.Color(102, 255, 102));
+        jButton_inicio.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton_inicio.setForeground(new java.awt.Color(0, 0, 0));
         jButton_inicio.setText("Inicio");
         jButton_inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,7 +80,10 @@ public class PrestamosMain extends javax.swing.JFrame {
             }
         });
 
-        jButton_Final.setText("Final");
+        jButton_Final.setBackground(new java.awt.Color(255, 153, 153));
+        jButton_Final.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton_Final.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_Final.setText("Entrega");
         jButton_Final.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_FinalActionPerformed(evt);
@@ -70,31 +97,135 @@ public class PrestamosMain extends javax.swing.JFrame {
             }
         });
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("Nombre objeto");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("Origen");
+
+        jComboBox_Origen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bienestar", "Biblioteca", "Sala de Computo" }));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Fecha y Hora");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("ID Carnet RFID");
+
+        jLabel_fechaHora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_fechaHora.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel_fechaHora.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel_Confirmacion.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel_Confirmacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Confirmacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel_Confirmacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(16, 16, 16)
+                                    .addComponent(jLabel_fechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jTextField_NombreObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jComboBox_Origen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(9, 9, 9)))
+                            .addComponent(jTextField_Idcarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel_Confirmacion, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_Idcarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel_Confirmacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_NombreObjeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox_Origen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel_fechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+        );
+
+        jLabel_mensajePrestamo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_mensajePrestamo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel_mensajePrestamo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jButton_Final, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(252, 252, 252)
                 .addComponent(jButton_lista)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton_Final, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel_mensajePrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_Final, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jButton_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(jButton_Final, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton_lista, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(jLabel_mensajePrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton_lista, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -102,23 +233,22 @@ public class PrestamosMain extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(242, 242, 242)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,14 +273,81 @@ public class PrestamosMain extends javax.swing.JFrame {
 
     private void jButton_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_inicioActionPerformed
         // TODO add your handling code here:
-        Inicio i = new Inicio(null, true);
-        i.setVisible(true);
+        RfidNfcController rficC = new RfidNfcController();
+        String idCarnet = jTextField_Idcarnet.getText();
+        try {
+            RfidNfc rfidM = rficC.getIdPersonaByRfidNfc(idCarnet);
+            if (rfidM.getIdCarnet() == null) {
+                jLabel_mensajePrestamo.setText("El carnet no pertenece a ninguna persona registrada en la Universidad");
+                jTextField_Idcarnet.setText("");
+                jLabel_Confirmacion.setForeground(Color.red);
+                jLabel_Confirmacion.setText("PRESTAMO DENEGADO");
+
+                
+            } else {
+                String idPersona = rfidM.getIdCarnet();
+                PersonalUniversidadController puc = new PersonalUniversidadController();
+                PersonalUniversidad pu = puc.getFullNameById(idPersona);
+                String primerNombre = pu.getPrimerNombre();
+                String primerApellido = pu.getPrimerApellido();
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                String fechaHora = dtf.format(LocalDateTime.now());
+                PrestamosController pc = new PrestamosController();
+                String nombreObjeto = jTextField_NombreObjeto.getText();
+                String origen = jComboBox_Origen.getSelectedItem().toString();
+                if (nombreObjeto.length() <= 3 || nombreObjeto.length() > 50) {
+                    JOptionPane.showMessageDialog(null, "Revisar información de NOMBRE OBJETO\nLongitud Mínima de 3 letras\nLongitud Máximea de 50 letras");
+                } else {
+                    Prestamos pe = new Prestamos(1, nombreObjeto, fechaHora, null, origen, idPersona, idCarnet);
+                    pc.savePrestamoInicio(pe);
+                    jLabel_mensajePrestamo.setText("Se realizó el préstamo de: "+nombreObjeto+" a la persona: "+primerNombre+primerApellido);
+                    jLabel_Confirmacion.setForeground(Color.GREEN);
+                    jLabel_Confirmacion.setText("PRESTAMO APROVADO");
+                    jLabel_fechaHora.setText(fechaHora);
+                }
+            }
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_jButton_inicioActionPerformed
 
     private void jButton_FinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FinalActionPerformed
         // TODO add your handling code here:
-        Final f = new Final(null, true);
-        f.setVisible(true);
+        RfidNfcController rficC = new RfidNfcController();
+        String idCarnet = jTextField_Idcarnet.getText();
+        try {
+            RfidNfc rfidM = rficC.getIdPersonaByRfidNfc(idCarnet);
+            if (rfidM.getIdCarnet() == null) {
+                jLabel_mensajePrestamo.setText("El carnet no pertenece a ninguna persona registrada en la Universidad");
+                jTextField_Idcarnet.setText("");
+                jLabel_Confirmacion.setForeground(Color.red);
+                jLabel_Confirmacion.setText("ENTREGA DENEGADA");
+
+                
+            } else {
+                String idPersona = rfidM.getIdCarnet();
+                PersonalUniversidadController puc = new PersonalUniversidadController();
+                PersonalUniversidad pu = puc.getFullNameById(idPersona);
+                String primerNombre = pu.getPrimerNombre();
+                String primerApellido = pu.getPrimerApellido();
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                String fechaHora = dtf.format(LocalDateTime.now());
+                PrestamosController pc = new PrestamosController();
+                String nombreObjeto = jTextField_NombreObjeto.getText();
+                String origen = jComboBox_Origen.getSelectedItem().toString();
+                if (nombreObjeto.length() <= 3 || nombreObjeto.length() > 50) {
+                    JOptionPane.showMessageDialog(null, "Revisar información de NOMBRE OBJETO\nLongitud Mínima de 3 letras\nLongitud Máximea de 50 letras");
+                } else {
+                    Prestamos pe = new Prestamos(1, nombreObjeto, null, fechaHora, origen, idPersona, idCarnet);
+                    pc.savePrestamoFinal(pe);
+                    jLabel_mensajePrestamo.setText("Se regresó el préstamo de: "+nombreObjeto+" de la persona: "+primerNombre+primerApellido);
+                    jLabel_Confirmacion.setForeground(Color.GREEN);
+                    jLabel_Confirmacion.setText("ENTREGA APROVADA");
+                    jLabel_fechaHora.setText(fechaHora);
+                }
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton_FinalActionPerformed
 
     private void jButton_listaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_listaActionPerformed
@@ -204,8 +401,19 @@ public class PrestamosMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Final;
     private javax.swing.JButton jButton_inicio;
     private javax.swing.JButton jButton_lista;
+    private javax.swing.JComboBox<String> jComboBox_Origen;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel_Confirmacion;
+    private javax.swing.JLabel jLabel_fechaHora;
+    private javax.swing.JLabel jLabel_mensajePrestamo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField_Idcarnet;
+    private javax.swing.JTextField jTextField_NombreObjeto;
     // End of variables declaration//GEN-END:variables
 }
