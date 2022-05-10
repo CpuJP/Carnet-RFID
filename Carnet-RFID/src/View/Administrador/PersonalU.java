@@ -440,7 +440,7 @@ public class PersonalU extends javax.swing.JDialog {
                                         if(email.length() <= 5 || email.length() > 100){
                                             JOptionPane.showMessageDialog(null, "Revisar información de EMAIL\nLongitud Mínima de 5 letras\nLongitud Máxima de 100 letras");
                                         }else{
-                                            if(celular.length() <= 3 || celular.length() > 13){
+                                            if(celular.length() <= 10 || celular.length() > 13){
                                                 JOptionPane.showMessageDialog(null, "Revisar información de CELULAR\nLongitud Mínima de 10 números\nLongitud Máxima de 13 números");
                                             }else{
                                                 PersonalUniversidad pu = new PersonalUniversidad(id, tipo, idCarnet, codigo, primerNombre, segundoNombre, primerApellido, segundoApellido, fecha, genero, email, celular);
@@ -495,6 +495,8 @@ public class PersonalU extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        CarnetsWithPersona cwp = new CarnetsWithPersona(null, true);
+        cwp.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
