@@ -1,11 +1,15 @@
 package Controller;
 
-import View.InicioSesion.Main;
+import View.Registro.login;
 
 public class menuMainController {
     
+    public static login frnLogin;
+    
     public void mostrarVista(){
-        Main m = new Main();
-        m.setVisible(true);
+        if (frnLogin == null) {
+            frnLogin = new login();
+            frnLogin.setVisible(true);
+        }
     }
 }

@@ -132,3 +132,20 @@ foreign key (id_persona) references personal_universidad(id_persona),
 id_rfid_nfc varchar(50) not null,
 foreign key (id_rfid_nfc) references rfid_nfc(id_carnet)
 );
+
+create table if not exists usuario (
+id int primary key not null auto_increment,
+usuario varchar(45) not null,
+unique key unique_usuario(usuario),
+contraseña varchar(45) not null,
+nombre varchar(80) not null,
+correo varchar(100) not null,
+unique key unique_correo(correo),
+last_session datetime default('0000-00-00 00:00:00'),
+id_tipo int default(NULL)
+);
+
+create table if not exists tipo_usuario (
+id int primary key not null auto_increment,
+nombre varchar(80) not null
+);
