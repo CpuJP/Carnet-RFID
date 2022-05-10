@@ -62,6 +62,7 @@ public class LaboratorioMain extends javax.swing.JFrame {
 
         jButton_Salir.setBackground(new java.awt.Color(255, 51, 51));
         jButton_Salir.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jButton_Salir.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Salir.setText("SALIR");
         jButton_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +72,7 @@ public class LaboratorioMain extends javax.swing.JFrame {
 
         jButton_Ingresar.setBackground(new java.awt.Color(102, 255, 102));
         jButton_Ingresar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jButton_Ingresar.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Ingresar.setText("INGRESAR");
         jButton_Ingresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton_Ingresar.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +176,7 @@ public class LaboratorioMain extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 255, 204));
         jButton1.setFont(new java.awt.Font("Calibri", 2, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Lista Ingresados");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
