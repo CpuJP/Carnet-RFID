@@ -303,7 +303,7 @@ public class PrestamosMain extends javax.swing.JFrame {
                     pc.savePrestamoInicio(pe);
                     jLabel_mensajePrestamo.setText("Se realizó el préstamo de: "+nombreObjeto+" a la persona: "+primerNombre+primerApellido);
                     jLabel_Confirmacion.setForeground(Color.GREEN);
-                    jLabel_Confirmacion.setText("PRESTAMO APROVADO");
+                    jLabel_Confirmacion.setText("PRESTAMO APROBADO");
                     jLabel_fechaHora.setText(fechaHora);
                 }
             }
@@ -343,7 +343,7 @@ public class PrestamosMain extends javax.swing.JFrame {
                     pc.savePrestamoFinal(pe);
                     jLabel_mensajePrestamo.setText("Se regresó el préstamo de: "+nombreObjeto+" de la persona: "+primerNombre+primerApellido);
                     jLabel_Confirmacion.setForeground(Color.GREEN);
-                    jLabel_Confirmacion.setText("ENTREGA APROVADA");
+                    jLabel_Confirmacion.setText("ENTREGA APROBADA");
                     jLabel_fechaHora.setText(fechaHora);
                 }
             }
