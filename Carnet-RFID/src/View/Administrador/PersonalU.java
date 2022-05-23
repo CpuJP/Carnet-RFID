@@ -130,6 +130,11 @@ public class PersonalU extends javax.swing.JDialog {
         jLabel10.setText("Fecha de nacimiento");
 
         jComboBox_Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "No binario", "Intersexual", "Prefiero no decir", "Otro" }));
+        jComboBox_Genero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_GeneroActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel11.setText("Género");
@@ -499,6 +504,10 @@ public class PersonalU extends javax.swing.JDialog {
         cwp.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox_GeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_GeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox_GeneroActionPerformed
 
     /**
      * @param args the command line arguments

@@ -70,7 +70,7 @@ insert into carnet.prestamos (nombre_objeto, inicio_prestamo, origen, id_persona
 use carnet;
 SELECT id_persona FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = '12345';
 SELECT id_persona, rfid_nfc_id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.id_persona = '1007668974';
-SELECT id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = ;
+SELECT id_carnet FROM personal_universidad JOIN rfid_nfc ON personal_universidad.rfid_nfc_id_carnet = rfid_nfc.id_carnet AND personal_universidad.rfid_nfc_id_carnet = '';
 SELECT * FROM carnet.personal_universidad;
 use carnet;
 SELECT rfid_nfc_id_carnet FROM personal_universidad WHERE id_persona = "1007668974";

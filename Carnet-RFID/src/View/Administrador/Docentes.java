@@ -330,6 +330,7 @@ public class Docentes extends javax.swing.JDialog {
             } else {
                 Docente dc = new Docente(tipo, cargo, facultad, sede, id, idCarnet);
                 dcc.saveDocente(dc);
+                JOptionPane.showMessageDialog(null, "El docente con D.I: "+jTextField_DI.getText()+" re registró con éxito");
             }
         }   catch (FileNotFoundException ex) {
             Logger.getLogger(PersonalUUpdate.class.getName()).log(Level.SEVERE, null, ex);

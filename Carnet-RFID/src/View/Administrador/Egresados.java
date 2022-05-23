@@ -321,6 +321,7 @@ public class Egresados extends javax.swing.JDialog {
             } else {
                Egresado eg = new Egresado(facultad, carrera, anioProm, idPersona, idCarnet);
                egc.saveEgresado(eg);
+               JOptionPane.showMessageDialog(null, "El egresado con D.I: "+jTextField_DI.getText()+" re registró con éxito");
             }
         }   catch (FileNotFoundException ex) {
             Logger.getLogger(PersonalUUpdate.class.getName()).log(Level.SEVERE, null, ex);
